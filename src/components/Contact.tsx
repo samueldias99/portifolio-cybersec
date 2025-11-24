@@ -1,4 +1,5 @@
 import { Mail, Github, Linkedin, MapPin, Copy, ExternalLink } from 'lucide-react';
+import TryHackMeIcon from '@/components/icons/TryHackMeIcon';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -41,6 +42,16 @@ const Contact = () => {
       actionText: 'Conectar',
       description: 'Rede profissional',
       color: 'cyber-purple'
+    }
+    ,
+    {
+      title: 'TryHackMe',
+      value: 'tryhackme.com/p/masday',
+      icon: TryHackMeIcon,
+      action: () => window.open('https://tryhackme.com/p/masday', '_blank'),
+      actionText: 'Visitar Perfil',
+      description: 'Plataforma de aprendizagem e labs',
+      color: 'cyber-orange'
     }
   ];
 
