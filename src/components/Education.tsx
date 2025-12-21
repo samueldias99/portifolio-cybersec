@@ -73,6 +73,15 @@ const Education = () => {
       description: 'Domínio do sistema operacional mais utilizado em servidores e infraestrutura de segurança. Proficiência em comandos essenciais, gerenciamento de usuários e permissões de arquivo. Esta base é fundamental para a administração segura de sistemas, hardening e o uso de ferramentas avançadas de cibersegurança em ambientes CLI (Command Line Interface). Essencial para qualquer função em DevOps ou Hacking Ético.',
       imageUrl: '/certificados/certificadolinux.png',
       linkUrl: 'https://assets.dio.me/4e1gyFLYp3ZpHgSVSIzi2VHajogXDWEGFuJeYUuUfkg/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci84U0dPWVNXQi5qcGc'
+    },
+    {
+      title: 'Certified Phishing Prevention Specialist (CPPS)',
+      institution: 'Hack & Fix Academy',
+      hours: 3,
+      date: 'Dezembro de 2025',
+      description: 'Certificação em prevenção de phishing, emitida pela Hack & Fix Academy. Especialização focada na identificação e mitigação de ataques de engenharia social, análise de vetores de phishing e implementação de boas práticas de defesa cibernética para proteção de dados e ativos digitais',
+      imageUrl: '/certificados/cpps.png',
+      linkUrl: 'https://academy.hackandfix.com/certificate-page/?user=10269&course=53700'
     }
   ];
 
