@@ -1,4 +1,4 @@
-import { Heart, Code, Shield } from 'lucide-react';
+import { Heart, Code, Shield } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ const Footer = () => {
             {/* Brand */}
             <div className="text-center md:text-left">
               <div className="font-mono font-bold text-lg gradient-text mb-2">
-                {'<samuel.dev />'}
+                {"<samdias.net />"}
               </div>
               <p className="text-sm text-muted-foreground">
                 Estudante de Cibersegurança
@@ -22,14 +22,23 @@ const Footer = () => {
             <div className="text-center">
               <h3 className="font-semibold mb-3">Navegação</h3>
               <div className="space-y-1 text-sm">
-                <a href="#about" className="block text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#about"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
                   Sobre Mim
                 </a>
-                <a href="#skills" className="block text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#skills"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
                   Hard Skills
                 </a>
-                
-                <a href="#contact" className="block text-muted-foreground hover:text-primary transition-colors">
+
+                <a
+                  href="#contact"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
                   Contato
                 </a>
               </div>
@@ -39,19 +48,21 @@ const Footer = () => {
             <div className="text-center md:text-right">
               <h3 className="font-semibold mb-3">Contato</h3>
               <div className="space-y-1 text-sm">
-                <p className="text-muted-foreground">samueldias84@proton.me</p>
+                <p className="text-muted-foreground">
+                  masday.security@proton.me
+                </p>
                 <div className="flex justify-center md:justify-end space-x-4 mt-3">
-                  <a 
-                    href="https://github.com/samueldias99" 
-                    target="_blank" 
+                  <a
+                    href="https://github.com/samueldias99"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     GitHub
                   </a>
-                  <a 
-                    href="https://www.linkedin.com/in/samuel-dias48/" 
-                    target="_blank" 
+                  <a
+                    href="https://www.linkedin.com/in/samuel-dias48/"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >

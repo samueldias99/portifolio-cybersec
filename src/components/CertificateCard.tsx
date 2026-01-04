@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Award, X } from 'lucide-react';
+import React, { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Award, X } from "lucide-react";
 
 interface CertificateProps {
   title: string;
@@ -25,8 +25,7 @@ const CertificateCard: React.FC<CertificateProps> = ({
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <Card 
-        className="cyber-glow hover:shadow-lg transition-all duration-300 group bg-card text-card-foreground border-border rounded-xl shadow-md p-6 md:p-8">
+      <Card className="cyber-glow hover:shadow-lg transition-all duration-300 group bg-card text-card-foreground border-border rounded-xl shadow-md p-6 md:p-8">
         <CardContent className="flex flex-col md:flex-row items-start gap-6">
           <div
             className="w-[300px] h-[200px] flex-shrink-0 bg-black/5 rounded-lg overflow-hidden cursor-pointer"
@@ -63,7 +62,13 @@ const CertificateCard: React.FC<CertificateProps> = ({
                 </Badge>
                 <span className="text-muted-foreground">{date}</span>
               </div>
-              <a href={linkUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-block">
+              <a
+                href={linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-block"
+              >
                 <Badge variant="outline" className="text-xs">
                   Ver Certificado
                 </Badge>
@@ -75,7 +80,10 @@ const CertificateCard: React.FC<CertificateProps> = ({
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80" onClick={() => setShowModal(false)}>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+          onClick={() => setShowModal(false)}
+        >
           <div className="relative max-w-7xl w-full">
             <button
               onClick={(e) => {

@@ -1,5 +1,5 @@
-import { User, Target, Zap } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { User, Target, Zap } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
@@ -25,20 +25,27 @@ const About = () => {
                   <h3 className="text-xl font-semibold mb-4">Minha Jornada</h3>
                   <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
                     <p>
-                      Minha jornada no mundo da tecnologia começou com uma curiosidade profunda sobre o Bitcoin. 
-                      Fascinado pela inovação por trás das moedas digitais e sua arquitetura descentralizada, 
-                      comecei a explorar o universo do desenvolvimento web para entender como a internet funciona.
+                      Minha jornada no mundo da tecnologia começou com uma
+                      curiosidade profunda sobre o Bitcoin. Fascinado pela
+                      inovação por trás das moedas digitais e sua arquitetura
+                      descentralizada, comecei a explorar o universo do
+                      desenvolvimento web para entender como a internet
+                      funciona.
                     </p>
                     <p>
-                      Foi nesse processo que descobri a área de cibersegurança. Rapidamente, me apaixonei por ela, 
-                      percebendo que era o campo perfeito para unir minha paixão por tecnologia com a necessidade 
-                      de proteção em um mundo cada vez mais digital.
+                      Foi nesse processo que descobri a área de cibersegurança.
+                      Rapidamente, me apaixonei por ela, percebendo que era o
+                      campo perfeito para unir minha paixão por tecnologia com a
+                      necessidade de proteção em um mundo cada vez mais digital.
                     </p>
                     <p>
-                      Acredito firmemente que, à medida que a adoção de moedas digitais como o Bitcoin cresce, 
-                      a segurança da informação se torna ainda mais crucial para proteger indivíduos e sistemas 
-                      contra ameaças e crimes digitais. Meu objetivo é contribuir ativamente para esse futuro, 
-                      usando minhas habilidades para construir um ambiente digital mais seguro e resiliente.
+                      Acredito firmemente que, à medida que a adoção de moedas
+                      digitais como o Bitcoin cresce, a segurança da informação
+                      se torna ainda mais crucial para proteger indivíduos e
+                      sistemas contra ameaças e crimes digitais. Meu objetivo é
+                      contribuir ativamente para esse futuro, usando minhas
+                      habilidades para construir um ambiente digital mais seguro
+                      e resiliente.
                     </p>
                   </div>
                 </div>
@@ -52,12 +59,16 @@ const About = () => {
               <div className="flex items-start space-x-4">
                 <User className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Meu Objetivo Profissional</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    Meu Objetivo Profissional
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed text-lg">
-                    Estudante de cibersegurança e tecnologia da informação, em busca de uma 
-                    oportunidade de estágio para desenvolver habilidades práticas e contribuir 
-                    ativamente para a cultura de segurança da informação. Dedicado a aprender 
-                    e crescer na área, com foco em resolução de problemas e melhoria contínua.
+                    Estudante de cibersegurança e tecnologia da informação, em
+                    busca de uma oportunidade de estágio para desenvolver
+                    habilidades práticas e contribuir ativamente para a cultura
+                    de segurança da informação. Dedicado a aprender e crescer na
+                    área, com foco em resolução de problemas e melhoria
+                    contínua.
                   </p>
                 </div>
               </div>
@@ -73,8 +84,9 @@ const About = () => {
                   <div>
                     <h4 className="font-semibold mb-2">Foco em Aprendizado</h4>
                     <p className="text-muted-foreground text-sm">
-                      Constante busca por novos conhecimentos em segurança da informação, 
-                      sempre atualizado com as últimas tendências e ameaças do setor.
+                      Constante busca por novos conhecimentos em segurança da
+                      informação, sempre atualizado com as últimas tendências e
+                      ameaças do setor.
                     </p>
                   </div>
                 </div>
@@ -88,8 +100,9 @@ const About = () => {
                   <div>
                     <h4 className="font-semibold mb-2">Prática & Inovação</h4>
                     <p className="text-muted-foreground text-sm">
-                      Experiência hands-on com laboratórios práticos e ferramentas 
-                      de segurança, sempre buscando aplicar conhecimentos teóricos.
+                      Experiência hands-on com laboratórios práticos e
+                      ferramentas de segurança, sempre buscando aplicar
+                      conhecimentos teóricos.
                     </p>
                   </div>
                 </div>
@@ -100,7 +113,6 @@ const About = () => {
       </div>
     </section>
   );
- 
 };
 
 export default About;

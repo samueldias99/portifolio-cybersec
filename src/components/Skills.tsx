@@ -1,50 +1,58 @@
-import { Terminal, Network, Code, GitBranch, Shield, Search } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
+import {
+  Terminal,
+  Network,
+  Code,
+  GitBranch,
+  Shield,
+  Search,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 const Skills = () => {
   const skills = [
     {
-      name: 'Linux',
+      name: "Linux",
       level: 80,
       icon: Terminal,
-      description: 'Administração de sistemas, linha de comando, shell scripting',
-      color: 'cyber-blue'
+      description:
+        "Administração de sistemas, linha de comando, shell scripting",
+      color: "cyber-blue",
     },
     {
-      name: 'Python',
+      name: "Python",
       level: 75,
       icon: Code,
-      description: 'Automação, scripts de segurança, análise de dados',
-      color: 'cyber-green'
+      description: "Automação, scripts de segurança, análise de dados",
+      color: "cyber-green",
     },
     {
-      name: 'Fundamentos de Redes',
+      name: "Fundamentos de Redes",
       level: 70,
       icon: Network,
-      description: 'TCP/IP, protocolos, análise de tráfego, configuração',
-      color: 'cyber-purple'
+      description: "TCP/IP, protocolos, análise de tráfego, configuração",
+      color: "cyber-purple",
     },
     {
-      name: 'Git & GitHub',
+      name: "Git & GitHub",
       level: 85,
       icon: GitBranch,
-      description: 'Controle de versão, colaboração, repositórios',
-      color: 'cyber-orange'
+      description: "Controle de versão, colaboração, repositórios",
+      color: "cyber-orange",
     },
     {
-      name: 'Nmap',
+      name: "Nmap",
       level: 65,
       icon: Search,
-      description: 'Descoberta de rede, escaneamento de portas',
-      color: 'cyber-blue'
+      description: "Descoberta de rede, escaneamento de portas",
+      color: "cyber-blue",
     },
     {
-      name: 'Wireshark',
+      name: "Wireshark",
       level: 60,
       icon: Shield,
-      description: 'Análise de protocolos, captura de tráfego',
-      color: 'cyber-green'
+      description: "Análise de protocolos, captura de tráfego",
+      color: "cyber-green",
     },
   ];
 
@@ -65,21 +73,26 @@ const Skills = () => {
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {skills.map((skill, index) => (
-              <Card key={skill.name} className="hover:cyber-glow transition-all duration-300">
+              <Card
+                key={skill.name}
+                className="hover:cyber-glow transition-all duration-300"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-4">
                     <skill.icon className={`w-6 h-6 text-${skill.color}`} />
                     <h3 className="font-semibold">{skill.name}</h3>
                   </div>
-                  
+
                   <div className="mb-3">
                     <div className="flex justify-between text-sm mb-2">
-                      <span className="text-muted-foreground">Proficiência</span>
+                      <span className="text-muted-foreground">
+                        Proficiência
+                      </span>
                       <span className="text-primary">{skill.level}%</span>
                     </div>
                     <Progress value={skill.level} className="h-2" />
                   </div>
-                  
+
                   <p className="text-sm text-muted-foreground">
                     {skill.description}
                   </p>
@@ -87,7 +100,6 @@ const Skills = () => {
               </Card>
             ))}
           </div>
-
         </div>
       </div>
     </section>

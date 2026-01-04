@@ -1,88 +1,112 @@
-import { GraduationCap, Award, BookOpen, Calendar } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import CertificateCard from './CertificateCard';
+import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import CertificateCard from "./CertificateCard";
 
 const Education = () => {
   const education = [
     {
-      title: 'Segurança Cibernética',
-      institution: 'Uniasselvi',
-      type: 'Graduação Tecnológica',
-      status: 'Em Andamento',
-      period: '2025 - 2027',
-      description: 'Iniciei a graduação em 31 de julho de 2025, com foco em redes de computadores, programação, segurança da informação, computação em nuvem, governança de TI e gestão de projetos. O curso também abrange ethical hacking, engenharia reversa, análise de malware e perícia digital, preparando para atuar na proteção de sistemas, prevenção de ataques cibernéticos e defesa de ambientes tecnológicos.',
+      title: "Segurança Cibernética",
+      institution: "Uniasselvi",
+      type: "Graduação Tecnológica",
+      status: "Em Andamento",
+      period: "2025 - 2027",
+      description:
+        "Iniciei a graduação em 31 de julho de 2025, com foco em redes de computadores, programação, segurança da informação, computação em nuvem, governança de TI e gestão de projetos. O curso também abrange ethical hacking, engenharia reversa, análise de malware e perícia digital, preparando para atuar na proteção de sistemas, prevenção de ataques cibernéticos e defesa de ambientes tecnológicos.",
       icon: GraduationCap,
-      color: 'cyber-blue'
-    }
+      color: "cyber-blue",
+    },
   ];
 
   const courses = [
     {
-      title: 'Redes para Segurança da Informação',
-      platform: 'Udemy',
-      instructor: 'Instrutor Especializado',
-  duration: '20 horas',
-      status: 'Concluído',
-      description: 'Fundamentos de redes TCP/IP, protocolos de segurança, análise de tráfego e configuração de firewalls.',
-      skills: ['TCP/IP', 'Protocolos de Rede', 'Firewalls', 'VPN', 'Análise de Tráfego'],
+      title: "Redes para Segurança da Informação",
+      platform: "Udemy",
+      instructor: "Instrutor Especializado",
+      duration: "20 horas",
+      status: "Concluído",
+      description:
+        "Fundamentos de redes TCP/IP, protocolos de segurança, análise de tráfego e configuração de firewalls.",
+      skills: [
+        "TCP/IP",
+        "Protocolos de Rede",
+        "Firewalls",
+        "VPN",
+        "Análise de Tráfego",
+      ],
       icon: BookOpen,
-      color: 'cyber-green',
-  imageUrl: '/certificados/redesseginfo.jpg',
-  linkUrl: 'https://udemy-certificate.s3.amazonaws.com/image/UC-222a336b-ae67-4b56-bcd4-53ca08de3815.jpg?v=1754264487000'
+      color: "cyber-green",
+      imageUrl: "/certificados/redesseginfo.jpg",
+      linkUrl:
+        "https://udemy-certificate.s3.amazonaws.com/image/UC-222a336b-ae67-4b56-bcd4-53ca08de3815.jpg?v=1754264487000",
     },
     {
-      title: 'Python para Hackers',
-      platform: 'Udemy',
-      instructor: 'Especialista em Ethical Hacking',
-      duration: '12 horas',
-      status: 'Em Andamento',
-      description: 'Desenvolvimento de ferramentas de segurança, automação de testes de penetração e análise de vulnerabilidades usando Python.',
-      skills: ['Python', 'Ethical Hacking', 'Automação', 'Web Scraping', 'Network Programming'],
+      title: "Python para Hackers",
+      platform: "Udemy",
+      instructor: "Especialista em Ethical Hacking",
+      duration: "12 horas",
+      status: "Em Andamento",
+      description:
+        "Desenvolvimento de ferramentas de segurança, automação de testes de penetração e análise de vulnerabilidades usando Python.",
+      skills: [
+        "Python",
+        "Ethical Hacking",
+        "Automação",
+        "Web Scraping",
+        "Network Programming",
+      ],
       icon: BookOpen,
-      color: 'cyber-purple',
-  imageUrl: '/certificados/pythonparahackers.png',
-  linkUrl: 'https://www.udemy.com/course/python-para-hackers'
-    }
+      color: "cyber-purple",
+      imageUrl: "/certificados/pythonparahackers.png",
+      linkUrl: "https://www.udemy.com/course/python-para-hackers",
+    },
   ];
 
   const certifications = [
     {
-      title: 'Bootcamp Santander Cibersegurança 2025',
-      institution: 'DIO',
+      title: "Bootcamp Santander Cibersegurança 2025",
+      institution: "DIO",
       hours: 31,
-      date: '2025',
-      description: 'Programa intensivo de cibersegurança oferecido pelo Santander em parceria com a DIO, focado em hacking ético, testes de invasão e engenharia social para desenvolver habilidades estratégicas e fortalecer a segurança de sistemas.',
-  imageUrl: '/certificados/certificadocyber2025.png',
-  linkUrl: 'https://assets.dio.me/Lj99MdC_nSwWHGhItCgOBeQyzs3g8Ukyk4yag5HwSPs/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci9VUUFFU0RRQS5qcGc'
+      date: "2025",
+      description:
+        "Programa intensivo de cibersegurança oferecido pelo Santander em parceria com a DIO, focado em hacking ético, testes de invasão e engenharia social para desenvolver habilidades estratégicas e fortalecer a segurança de sistemas.",
+      imageUrl: "/certificados/certificadocyber2025.png",
+      linkUrl:
+        "https://assets.dio.me/Lj99MdC_nSwWHGhItCgOBeQyzs3g8Ukyk4yag5HwSPs/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci9VUUFFU0RRQS5qcGc",
     },
     {
-      title: 'Formação GitHub Certification',
-      institution: 'DIO',
-  hours: 10,
-      date: '2025',
-      description: 'Formação focada no domínio do ecossistema Git e GitHub, capacitando profissionais em controle de versão, colaboração e administração de projetos. Habilidades desenvolvidas incluem gerenciamento de repositórios, workflows colaborativos, code reviews e práticas DevOps modernas.',
-  imageUrl: '/certificados/certificadogithub.png',
-  linkUrl: 'https://assets.dio.me/AoogI8xWdR2Tx1uplWU6wDlxexbeGY0fsnAysgniPvU/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci80UkxSQzlIUC5qcGc'
+      title: "Formação GitHub Certification",
+      institution: "DIO",
+      hours: 10,
+      date: "2025",
+      description:
+        "Formação focada no domínio do ecossistema Git e GitHub, capacitando profissionais em controle de versão, colaboração e administração de projetos. Habilidades desenvolvidas incluem gerenciamento de repositórios, workflows colaborativos, code reviews e práticas DevOps modernas.",
+      imageUrl: "/certificados/certificadogithub.png",
+      linkUrl:
+        "https://assets.dio.me/AoogI8xWdR2Tx1uplWU6wDlxexbeGY0fsnAysgniPvU/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci80UkxSQzlIUC5qcGc",
     },
     {
-      title: 'Certificação Linux',
-      institution: 'DIO',
+      title: "Certificação Linux",
+      institution: "DIO",
       hours: 23,
-      date: '2025',
-      description: 'Domínio do sistema operacional mais utilizado em servidores e infraestrutura de segurança. Proficiência em comandos essenciais, gerenciamento de usuários e permissões de arquivo. Esta base é fundamental para a administração segura de sistemas, hardening e o uso de ferramentas avançadas de cibersegurança em ambientes CLI (Command Line Interface). Essencial para qualquer função em DevOps ou Hacking Ético.',
-      imageUrl: '/certificados/certificadolinux.png',
-      linkUrl: 'https://assets.dio.me/4e1gyFLYp3ZpHgSVSIzi2VHajogXDWEGFuJeYUuUfkg/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci84U0dPWVNXQi5qcGc'
+      date: "2025",
+      description:
+        "Domínio do sistema operacional mais utilizado em servidores e infraestrutura de segurança. Proficiência em comandos essenciais, gerenciamento de usuários e permissões de arquivo. Esta base é fundamental para a administração segura de sistemas, hardening e o uso de ferramentas avançadas de cibersegurança em ambientes CLI (Command Line Interface). Essencial para qualquer função em DevOps ou Hacking Ético.",
+      imageUrl: "/certificados/certificadolinux.png",
+      linkUrl:
+        "https://assets.dio.me/4e1gyFLYp3ZpHgSVSIzi2VHajogXDWEGFuJeYUuUfkg/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci84U0dPWVNXQi5qcGc",
     },
     {
-      title: 'Certified Phishing Prevention Specialist (CPPS)',
-      institution: 'Hack & Fix Academy',
+      title: "Certified Phishing Prevention Specialist (CPPS)",
+      institution: "Hack & Fix Academy",
       hours: 3,
-      date: 'Dezembro de 2025',
-      description: 'Certificação em prevenção de phishing, emitida pela Hack & Fix Academy. Especialização focada na identificação e mitigação de ataques de engenharia social, análise de vetores de phishing e implementação de boas práticas de defesa cibernética para proteção de dados e ativos digitais',
-      imageUrl: '/certificados/cpps.png',
-      linkUrl: 'https://academy.hackandfix.com/certificate-page/?user=10269&course=53700'
-    }
+      date: "Dezembro de 2025",
+      description:
+        "Certificação em prevenção de phishing, emitida pela Hack & Fix Academy. Especialização focada na identificação e mitigação de ataques de engenharia social, análise de vetores de phishing e implementação de boas práticas de defesa cibernética para proteção de dados e ativos digitais",
+      imageUrl: "/certificados/cpps.png",
+      linkUrl:
+        "https://academy.hackandfix.com/certificate-page/?user=10269&course=53700",
+    },
   ];
 
   return (
@@ -110,12 +134,16 @@ const Education = () => {
                       <edu.icon className={`w-8 h-8 text-${edu.color}`} />
                       <div>
                         <CardTitle className="text-xl">{edu.title}</CardTitle>
-                        <p className="text-muted-foreground">{edu.institution}</p>
+                        <p className="text-muted-foreground">
+                          {edu.institution}
+                        </p>
                       </div>
                     </div>
                     <div className="text-right">
                       <Badge variant="secondary">{edu.status}</Badge>
-                      <p className="text-sm text-muted-foreground mt-1">{edu.period}</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {edu.period}
+                      </p>
                     </div>
                   </div>
                 </CardHeader>
@@ -130,14 +158,16 @@ const Education = () => {
 
           {/* Courses */}
           <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6">Cursos Especializados</h3>
+            <h3 className="text-2xl font-semibold mb-6">
+              Cursos Especializados
+            </h3>
             <div className="space-y-6">
               {courses.map((course, index) => (
                 <CertificateCard
                   key={course.title}
                   title={course.title}
                   institution={course.platform}
-                  hours={parseInt(course.duration.split(' ')[0])}
+                  hours={parseInt(course.duration.split(" ")[0])}
                   date={course.status}
                   description={course.description}
                   imageUrl={course.imageUrl}
@@ -165,7 +195,6 @@ const Education = () => {
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>
