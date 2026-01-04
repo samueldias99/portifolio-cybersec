@@ -1,65 +1,87 @@
-import { Mail, Github, Linkedin, MapPin, Copy, ExternalLink } from 'lucide-react';
-import TryHackMeIcon from '@/components/icons/TryHackMeIcon';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
+import {
+  Mail,
+  Github,
+  Linkedin,
+  MapPin,
+  Copy,
+  ExternalLink,
+} from "lucide-react";
+import TryHackMeIcon from "@/components/icons/TryHackMeIcon";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText('samueldias84@proton.me');
-    toast({
-      title: "E-mail copiado!",
-      description: "O endereço de e-mail foi copiado para a área de transferência.",
-    });
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("masday.security@proton.me");
+      toast({
+        title: "E-mail copiado!",
+        description:
+          "O endereço de e-mail foi copiado para a área de transferência.",
+      });
+    } catch (err) {
+      toast({
+        title: "Erro ao copiar",
+        description: "Não foi possível copiar o e-mail. Tente manualmente.",
+      });
+    }
+  };
+
+  const colorClasses: Record<string, string> = {
+    "cyber-blue": "text-cyber-blue",
+    "cyber-green": "text-cyber-green",
+    "cyber-purple": "text-cyber-purple",
+    "cyber-orange": "text-cyber-orange",
   };
 
   const contactMethods = [
     {
-      title: 'E-mail Profissional',
-      value: 'samueldias84@proton.me',
+      title: "E-mail Profissional",
+      value: "masday.security@proton.me",
       icon: Mail,
       action: copyEmail,
-      actionText: 'Copiar E-mail',
-      description: 'Resposta em até 24 horas',
-      color: 'cyber-blue'
+      actionText: "Copiar E-mail",
+      description: "Resposta em até 24 horas",
+      color: "cyber-blue",
     },
     {
-      title: 'GitHub',
-      value: 'github.com/samueldias99',
+      title: "GitHub",
+      value: "github.com/samueldias99",
       icon: Github,
-      action: () => window.open('https://github.com/samueldias99', '_blank'),
-      actionText: 'Visitar Perfil',
-      description: 'Projetos e contribuições',
-      color: 'cyber-green'
+      action: () => window.open("https://github.com/samueldias99", "_blank"),
+      actionText: "Visitar Perfil",
+      description: "Projetos e contribuições",
+      color: "cyber-green",
     },
     {
-      title: 'LinkedIn',
-      value: 'linkedin.com/in/samuel-dias48',
+      title: "LinkedIn",
+      value: "linkedin.com/in/samuel-dias48",
       icon: Linkedin,
-      action: () => window.open('https://www.linkedin.com/in/samuel-dias48/', '_blank'),
-      actionText: 'Conectar',
-      description: 'Rede profissional',
-      color: 'cyber-purple'
-    }
-    ,
+      action: () =>
+        window.open("https://www.linkedin.com/in/samuel-dias48/", "_blank"),
+      actionText: "Conectar",
+      description: "Rede profissional",
+      color: "cyber-purple",
+    },
     {
-      title: 'TryHackMe',
-      value: 'tryhackme.com/p/masday',
+      title: "TryHackMe",
+      value: "tryhackme.com/p/masday",
       icon: TryHackMeIcon,
-      action: () => window.open('https://tryhackme.com/p/masday', '_blank'),
-      actionText: 'Visitar Perfil',
-      description: 'Plataforma de aprendizagem e labs',
-      color: 'cyber-orange'
-    }
+      action: () => window.open("https://tryhackme.com/p/masday", "_blank"),
+      actionText: "Visitar Perfil",
+      description: "Plataforma de aprendizagem e labs",
+      color: "cyber-orange",
+    },
   ];
 
   const availability = [
-    'Estágios em Cibersegurança',
-    'Projetos de Segurança da Informação',
-    'Colaborações em Open Source',
-    'Mentoria em Tecnologia'
+    "Estágios em Cibersegurança",
+    "Projetos de Segurança da Informação",
+    "Colaborações em Open Source",
+    "Mentoria em Tecnologia",
   ];
 
   return (
@@ -78,32 +100,40 @@ const Contact = () => {
 
           {/* Contact Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {contactMethods.map((method, index) => (
-              <Card key={method.title} className="hover:cyber-glow transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <method.icon className={`w-12 h-12 text-${method.color} mx-auto mb-4`} />
-                  <h3 className="font-semibold mb-2">{method.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-2 font-mono break-all">
-                    {method.value}
-                  </p>
-                  <p className="text-xs text-muted-foreground mb-4">
-                    {method.description}
-                  </p>
-                  <Button 
-                    size="sm" 
-                    onClick={method.action}
-                    className="w-full"
-                  >
-                    {method.title === 'E-mail Profissional' ? (
-                      <Copy className="w-4 h-4 mr-2" />
-                    ) : (
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                    )}
-                    {method.actionText}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {contactMethods.map((method, index) => {
+              const Icon = method.icon;
+              return (
+                <Card
+                  key={method.title}
+                  className="hover:cyber-glow transition-all duration-300"
+                >
+                  <CardContent className="p-6 text-center">
+                    <Icon
+                      className={`w-12 h-12 ${colorClasses[method.color] ?? ""} mx-auto mb-4`}
+                    />
+                    <h3 className="font-semibold mb-2">{method.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-2 font-mono break-all">
+                      {method.value}
+                    </p>
+                    <p className="text-xs text-muted-foreground mb-4">
+                      {method.description}
+                    </p>
+                    <Button
+                      size="sm"
+                      onClick={method.action}
+                      className="w-full"
+                    >
+                      {method.title === "E-mail Profissional" ? (
+                        <Copy className="w-4 h-4 mr-2" />
+                      ) : (
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                      )}
+                      {method.actionText}
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           {/* Main Contact Card */}
@@ -116,7 +146,10 @@ const Contact = () => {
                   </h3>
                   <ul className="space-y-3">
                     {availability.map((item, index) => (
-                      <li key={item} className="flex items-center text-muted-foreground">
+                      <li
+                        key={item}
+                        className="flex items-center text-muted-foreground"
+                      >
                         <div className="w-2 h-2 bg-primary rounded-full mr-3" />
                         {item}
                       </li>
@@ -133,11 +166,7 @@ const Contact = () => {
                     <p className="font-semibold">Brasil - Remoto</p>
                   </div>
 
-                  <Button 
-                    size="lg" 
-                    onClick={copyEmail}
-                    className="pulse-glow"
-                  >
+                  <Button size="lg" onClick={copyEmail} className="pulse-glow">
                     <Mail className="w-5 h-5 mr-2" />
                     Entrar em Contato
                   </Button>
@@ -152,17 +181,18 @@ const Contact = () => {
               Pronto para contribuir com a segurança da sua organização
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Estudante dedicado em busca de uma oportunidade de estágio para aplicar 
-              conhecimentos teóricos e desenvolver habilidades práticas em cibersegurança. 
-              Vamos construir um futuro digital mais seguro juntos!
+              Estudante dedicado em busca de uma oportunidade de estágio para
+              aplicar conhecimentos teóricos e desenvolver habilidades práticas
+              em cibersegurança. Vamos construir um futuro digital mais seguro
+              juntos!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button onClick={copyEmail}>
-                Enviar E-mail
-              </Button>
-              <Button 
+              <Button onClick={copyEmail}>Enviar E-mail</Button>
+              <Button
                 variant="outline"
-                onClick={() => window.open('https://github.com/samueldias99', '_blank')}
+                onClick={() =>
+                  window.open("https://github.com/samueldias99", "_blank")
+                }
               >
                 Ver Projetos no GitHub
               </Button>

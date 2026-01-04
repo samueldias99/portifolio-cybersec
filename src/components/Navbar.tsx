@@ -1,29 +1,35 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect, useMemo } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
 
-  const navItems = [
-    { id: 'home', label: 'Início' },
-    { id: 'about', label: 'Sobre Mim' },
-    { id: 'skills', label: 'Hard Skills' },
-    { id: 'education', label: 'Formação' },
-    { id: 'soft-skills', label: 'Soft Skills' },
-    { id: 'contact', label: 'Contato' },
-  ];
+  const navItems = useMemo(
+    () => [
+      { id: "home", label: "Início" },
+      { id: "about", label: "Sobre Mim" },
+      { id: "skills", label: "Hard Skills" },
+      { id: "education", label: "Formação" },
+      { id: "soft-skills", label: "Soft Skills" },
+      { id: "contact", label: "Contato" },
+    ],
+    [],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => document.getElementById(item.id));
+      const sections = navItems.map((item) => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
         if (section) {
           const { offsetTop, offsetHeight } = section;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section.id);
             break;
           }
@@ -31,14 +37,14 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [navItems]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
@@ -48,11 +54,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div 
+          <div
             className="font-mono font-bold text-xl gradient-text cursor-pointer"
-            onClick={() => scrollToSection('home')}
+            onClick={() => scrollToSection("home")}
           >
-            {'<samuel.dev />'}
+            {"<samdias.net />"}
           </div>
 
           {/* Desktop Navigation */}
