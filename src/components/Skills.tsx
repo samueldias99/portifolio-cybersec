@@ -12,47 +12,76 @@ import { Progress } from "@/components/ui/progress";
 const Skills = () => {
   const skills = [
     {
+      name: "Wazuh (SIEM/XDR)",
+      level: 65,
+      icon: Shield,
+      description:
+        "Monitoramento de segurança, detecção de ameaças, análise de logs",
+      color: "cyber-blue",
+    },
+    {
+      name: "Docker",
+      level: 70,
+      icon: Terminal,
+      description: "Containerização, segurança de containers, orquestração",
+      color: "cyber-green",
+    },
+    {
+      name: "Security Monitoring",
+      level: 75,
+      icon: Search,
+      description: "Monitoramento contínuo, detecção de anomalias, alertas",
+      color: "cyber-purple",
+    },
+    {
       name: "Linux",
       level: 80,
       icon: Terminal,
       description:
-        "Administração de sistemas, linha de comando, shell scripting",
+        "Administração de sistemas, hardening, análise forense",
       color: "cyber-blue",
     },
     {
       name: "Python",
       level: 75,
       icon: Code,
-      description: "Automação, scripts de segurança, análise de dados",
+      description: "Automação de segurança, análise de logs, scripts SOC",
       color: "cyber-green",
+    },
+    {
+      name: "Análise de Logs",
+      level: 70,
+      icon: Search,
+      description: "Correlação de eventos, investigação, threat hunting",
+      color: "cyber-orange",
     },
     {
       name: "Fundamentos de Redes",
       level: 70,
       icon: Network,
-      description: "TCP/IP, protocolos, análise de tráfego, configuração",
+      description: "TCP/IP, protocolos, análise de tráfego, segurança de rede",
       color: "cyber-purple",
+    },
+    {
+      name: "Incident Response",
+      level: 65,
+      icon: Shield,
+      description: "Resposta a incidentes, contenção, remediação",
+      color: "cyber-blue",
+    },
+    {
+      name: "Wireshark",
+      level: 65,
+      icon: Network,
+      description: "Análise forense de rede, investigação de incidentes",
+      color: "cyber-green",
     },
     {
       name: "Git & GitHub",
       level: 85,
       icon: GitBranch,
-      description: "Controle de versão, colaboração, repositórios",
+      description: "Controle de versão, colaboração, DevSecOps",
       color: "cyber-orange",
-    },
-    {
-      name: "Nmap",
-      level: 65,
-      icon: Search,
-      description: "Descoberta de rede, escaneamento de portas",
-      color: "cyber-blue",
-    },
-    {
-      name: "Wireshark",
-      level: 60,
-      icon: Shield,
-      description: "Análise de protocolos, captura de tráfego",
-      color: "cyber-green",
     },
   ];
 

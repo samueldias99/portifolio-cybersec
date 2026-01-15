@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Estudante de Cibersegurança";
+  const fullText = "Analista de Segurança Defensiva | Blue Team";
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -65,9 +65,9 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-            Em busca de uma oportunidade de estágio para desenvolver habilidades
-            práticas e contribuir ativamente para a cultura de segurança da
-            informação.
+            Focado em segurança defensiva e operações de Blue Team. Em busca de 
+            oportunidades para atuar em SOC (Security Operations Center), monitoramento 
+            de segurança, resposta a incidentes e proteção proativa de infraestruturas.
           </p>
 
           {/* CTA Buttons */}
@@ -98,15 +98,16 @@ const Hero = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               {[
+                "Wazuh",
+                "Docker",
+                "SIEM",
                 "Linux",
                 "Python",
-                "Redes",
-                "Git",
-                "Nmap",
                 "Wireshark",
-                "Burp Suite",
-                "Metasploit",
-                "OWASP ZAP"
+                "Splunk",
+                "IDS/IPS",
+                "Log Analysis",
+                "Incident Response"
               ].map((tech) => (
                 <span
                   key={tech}

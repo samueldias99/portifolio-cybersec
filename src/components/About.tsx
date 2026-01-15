@@ -63,12 +63,12 @@ const About = () => {
                     Meu Objetivo Profissional
                   </h3>
                   <p className="text-muted-foreground leading-relaxed text-lg">
-                    Estudante de cibersegurança e tecnologia da informação, em
-                    busca de uma oportunidade de estágio para desenvolver
-                    habilidades práticas e contribuir ativamente para a cultura
-                    de segurança da informação. Dedicado a aprender e crescer na
-                    área, com foco em resolução de problemas e melhoria
-                    contínua.
+                    Estudante de cibersegurança com foco em <strong>segurança defensiva e operações de Blue Team</strong>. 
+                    Em busca de oportunidades para atuar em SOC (Security Operations Center), 
+                    monitoramento de segurança, resposta a incidentes e análise de ameaças. 
+                    Experiência com ferramentas como Wazuh, Docker, SIEM e análise de logs. 
+                    Conhecimento complementar em Red Team para melhor compreensão das táticas 
+                    de atacantes e fortalecimento das defesas.
                   </p>
                 </div>
               </div>
@@ -82,11 +82,12 @@ const About = () => {
                 <div className="flex items-start space-x-4">
                   <Target className="w-6 h-6 text-cyber-green mt-1" />
                   <div>
-                    <h4 className="font-semibold mb-2">Foco em Aprendizado</h4>
+                    <h4 className="font-semibold mb-2">Foco em Blue Team</h4>
                     <p className="text-muted-foreground text-sm">
-                      Constante busca por novos conhecimentos em segurança da
-                      informação, sempre atualizado com as últimas tendências e
-                      ameaças do setor.
+                      Especialização em segurança defensiva com foco em monitoramento, 
+                      detecção de ameaças e resposta a incidentes. Estudando Wazuh, 
+                      Docker, SIEM e ferramentas de análise de logs para proteção 
+                      proativa de infraestruturas.
                     </p>
                   </div>
                 </div>
@@ -98,11 +99,11 @@ const About = () => {
                 <div className="flex items-start space-x-4">
                   <Zap className="w-6 h-6 text-cyber-blue mt-1" />
                   <div>
-                    <h4 className="font-semibold mb-2">Prática & Inovação</h4>
+                    <h4 className="font-semibold mb-2">Prática & SOC Operations</h4>
                     <p className="text-muted-foreground text-sm">
-                      Experiência hands-on com laboratórios práticos e
-                      ferramentas de segurança, sempre buscando aplicar
-                      conhecimentos teóricos.
+                      Experiência hands-on com laboratórios de segurança defensiva, 
+                      simulações de SOC e análise de incidentes. Conhecimento em Red Team 
+                      para entender táticas de atacantes e fortalecer as defesas.
                     </p>
                   </div>
                 </div>

@@ -64,6 +64,17 @@ const Education = () => {
 
   const certifications = [
     {
+      title: "IBM Cybersecurity Analyst Professional Certificate",
+      institution: "IBM",
+      hours: 120,
+      date: "Janeiro de 2025",
+      description:
+        "Certificação profissional da IBM focada em análise de cibersegurança, cobrindo fundamentos de segurança da informação, resposta a incidentes, análise de ameaças, segurança de rede e conformidade. Desenvolvida para preparar profissionais para atuar em Security Operations Centers (SOC) e funções de análise de segurança defensiva.",
+      imageUrl: "/certificados/ibm-cybersecurity.png",
+      linkUrl:
+        "https://www.credly.com/badges/7fc4854d-d897-43d1-bbc5-625e095d96bb/linked_in_profile",
+    },
+    {
       title: "Bootcamp Santander Cibersegurança 2025",
       institution: "DIO",
       hours: 31,
