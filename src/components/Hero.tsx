@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
 import { Shield, Terminal, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FaDocker, FaLinux, FaPython } from "react-icons/fa";
+import WazuhIcon from "@/components/icons/WazuhIcon";
+import WiresharkIcon from "@/components/icons/WiresharkIcon";
+import SplunkIcon from "@/components/icons/SplunkIcon";
+import SiemIcon from "@/components/icons/SiemIcon";
+import IdsIpsIcon from "@/components/icons/IdsIpsIcon";
+import LogAnalysisIcon from "@/components/icons/LogAnalysisIcon";
+import IncidentResponseIcon from "@/components/icons/IncidentResponseIcon";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -98,24 +106,28 @@ const Hero = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               {[
-                "Wazuh",
-                "Docker",
-                "SIEM",
-                "Linux",
-                "Python",
-                "Wireshark",
-                "Splunk",
-                "IDS/IPS",
-                "Log Analysis",
-                "Incident Response"
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-card border border-border rounded-full text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-                >
-                  {tech}
-                </span>
-              ))}
+                { name: "Wazuh", icon: WazuhIcon },
+                { name: "Docker", icon: FaDocker },
+                { name: "SIEM", icon: SiemIcon },
+                { name: "Linux", icon: FaLinux },
+                { name: "Python", icon: FaPython },
+                { name: "Wireshark", icon: WiresharkIcon },
+                { name: "Splunk", icon: SplunkIcon },
+                { name: "IDS/IPS", icon: IdsIpsIcon },
+                { name: "Log Analysis", icon: LogAnalysisIcon },
+                { name: "Incident Response", icon: IncidentResponseIcon }
+              ].map((tech) => {
+                const IconComponent = tech.icon;
+                return (
+                  <span
+                    key={tech.name}
+                    className="px-3 py-2 bg-card border border-border rounded-full text-muted-foreground hover:text-primary hover:border-primary transition-colors flex items-center gap-2"
+                  >
+                    <IconComponent className="w-5 h-5" />
+                    {tech.name}
+                  </span>
+                );
+              })}
             </div>
           </div>
         </div>
