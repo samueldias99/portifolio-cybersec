@@ -118,6 +118,16 @@ const Education = () => {
       linkUrl:
         "https://academy.hackandfix.com/certificate-page/?user=10269&course=53700",
     },
+    {
+      title: "Cybersecurity Career Starter Certification (CCSC)",
+      institution: "Hack & Fix Academy",
+      hours: 1,
+      date: "2026",
+      description:
+        "Detentor da certificação CCSC (Cybersecurity Career Starter Certification) pela Hack & Fix Academy. Esta credencial atesta uma base sólida nos princípios fundamentais de segurança da informação e um entendimento claro das operações modernas de defesa digital. O programa focou no desenvolvimento de habilidades essenciais para atuação em centros de operações de segurança (SOC), incluindo a mentalidade de defesa ativa e a capacidade de construir ambientes de teste para simulação de ameaças reais.",
+      imageUrl: "/certificados/Cybersecurity-Carrer-Starter-Certificationm.png",
+      linkUrl: "blob:https://academy.hackandfix.com/01e53b29-2c99-4db3-a211-6e2ee34e362c",
+    },
   ];
 
   return (

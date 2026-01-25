@@ -67,9 +67,10 @@ Atualizar o portfólio para refletir mudança de foco de Red Team para Blue Team
 - [x] Validar que o foco Blue Team está claro
 
 ### 8. 🚀 Deploy
-- [ ] Commit das alterações no Git
-- [ ] Push para GitHub
-- [ ] Verificar deploy automático
+- [x] Commit das alterações no Git
+- [x] Push para GitHub
+- [x] Deploy automático iniciado
+- [ ] Aguardar conclusão do deploy (2-5 minutos)
 - [ ] Testar site em produção (https://www.samdias.net/)
 - [ ] Validar que todas as mudanças estão visíveis
 
