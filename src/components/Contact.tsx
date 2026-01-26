@@ -78,10 +78,14 @@ const Contact = () => {
   ];
 
   const availability = [
+    "Analista de Suporte com Foco em Segurança",
     "Estágios em Cibersegurança",
+    "Analista de Segurança Júnior",
+    "SOC N1 / L1 (Analista Nível 1 / Júnior)",
     "Projetos de Segurança da Informação",
-    "Colaborações em Open Source",
-    "Mentoria em Tecnologia",
+    "Monitoramento e Resposta a Incidentes",
+    "Análise de Vulnerabilidades e Testes de Penetração Básicos",
+    "Educação e Treinamento em Segurança Cibernética",
   ];
 
   return (

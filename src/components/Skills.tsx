@@ -5,6 +5,8 @@ import {
   GitBranch,
   Shield,
   Search,
+  Server,
+  Container,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -82,6 +84,22 @@ const Skills = () => {
       icon: GitBranch,
       description: "Controle de versão, colaboração, DevSecOps",
       color: "cyber-orange",
+    },
+    {
+      name: "Virtualização",
+      level: 70,
+      icon: Server,
+      description:
+        "Experiência em configuração de VMs para laboratórios de segurança (VirtualBox/VMware)",
+      color: "cyber-purple",
+    },
+    {
+      name: "Conteinerização (Docker & Podman)",
+      level: 75,
+      icon: Container,
+      description:
+        "Gestão de contêineres, uso de Docker Compose e implementação de serviços em ambientes isolados (ex: n8n e ferramentas de SOC em conteiner como o wazuh)",
+      color: "cyber-green",
     },
   ];
 
