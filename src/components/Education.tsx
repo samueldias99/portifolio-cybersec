@@ -125,9 +125,18 @@ const Education = () => {
       date: "2026",
       description:
         "Detentor da certificação CCSC (Cybersecurity Career Starter Certification) pela Hack & Fix Academy. Esta credencial atesta uma base sólida nos princípios fundamentais de segurança da informação e um entendimento claro das operações modernas de defesa digital. O programa focou no desenvolvimento de habilidades essenciais para atuação em centros de operações de segurança (SOC), incluindo a mentalidade de defesa ativa e a capacidade de construir ambientes de teste para simulação de ameaças reais.",
-      imageUrl: "/certificados/Cybersecurity-Carrer-Starter-Certificationm.png",
+      imageUrl: "/certificados/cybersecurity-carrer-Starter-certificationm.png",
       linkUrl: "blob:https://academy.hackandfix.com/01e53b29-2c99-4db3-a211-6e2ee34e362c",
     },
+    {
+      title: "Certified Online Fraud Prevention Specialist (COFPS)",
+      institution: "Hack & Fix Academy",
+      hours: 3,
+      date: "Fev 2026",
+      description: "Especialização focada na identificação de fraudes digitais, análise de engenharia social e implementação de camadas de proteção contra golpes modernos.",
+      imageUrl: "/certificados/certified-online-fraud-prevention-specialist(COFPS).png", 
+      linkUrl: "blob:https://academy.hackandfix.com/9d8a4ba1-eba6-48c3-bf28-5e9b10b2cab8"
+    }
   ];
 
   return (
