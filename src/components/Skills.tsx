@@ -2,103 +2,55 @@ import {
   Terminal,
   Network,
   Code,
-  GitBranch,
   Shield,
   Search,
-  Server,
   Container,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+
 
 const Skills = () => {
   const skills = [
     {
-      name: "Wazuh (SIEM/XDR)",
-      level: 65,
+      name: "Wazuh (SIEM & XDR)",
       icon: Shield,
       description:
-        "Monitoramento de segurança, detecção de ameaças, análise de logs",
+        "Foco: Implementação e Monitoramento (Home Lab) Configuração e deploy de infraestrutura SIEM utilizando Docker. Experiência prática na instalação de agentes (Windows/Linux), ingestão de logs e criação de regras de detecção personalizadas (XML) para identificar varreduras de rede e ataques de força bruta. Gerenciamento de alertas via painel Kibana/OpenSearch.",
       color: "cyber-blue",
     },
     {
-      name: "Docker",
-      level: 70,
-      icon: Terminal,
-      description: "Containerização, segurança de containers, orquestração",
-      color: "cyber-green",
-    },
-    {
-      name: "Security Monitoring",
-      level: 75,
-      icon: Search,
-      description: "Monitoramento contínuo, detecção de anomalias, alertas",
-      color: "cyber-purple",
-    },
-    {
-      name: "Linux",
-      level: 80,
-      icon: Terminal,
-      description:
-        "Administração de sistemas, hardening, análise forense",
-      color: "cyber-blue",
-    },
-    {
-      name: "Python",
-      level: 75,
-      icon: Code,
-      description: "Automação de segurança, análise de logs, scripts SOC",
-      color: "cyber-green",
-    },
-    {
-      name: "Análise de Logs",
-      level: 70,
-      icon: Search,
-      description: "Correlação de eventos, investigação, threat hunting",
-      color: "cyber-orange",
-    },
-    {
-      name: "Fundamentos de Redes",
-      level: 70,
-      icon: Network,
-      description: "TCP/IP, protocolos, análise de tráfego, segurança de rede",
-      color: "cyber-purple",
-    },
-    {
-      name: "Incident Response",
-      level: 65,
-      icon: Shield,
-      description: "Resposta a incidentes, contenção, remediação",
-      color: "cyber-blue",
-    },
-    {
-      name: "Wireshark",
-      level: 65,
-      icon: Network,
-      description: "Análise forense de rede, investigação de incidentes",
-      color: "cyber-green",
-    },
-    {
-      name: "Git & GitHub",
-      level: 85,
-      icon: GitBranch,
-      description: "Controle de versão, colaboração, DevSecOps",
-      color: "cyber-orange",
-    },
-    {
-      name: "Virtualização",
-      level: 70,
-      icon: Server,
-      description:
-        "Experiência em configuração de VMs para laboratórios de segurança (VirtualBox/VMware)",
-      color: "cyber-purple",
-    },
-    {
-      name: "Conteinerização (Docker & Podman)",
-      level: 75,
+      name: "Container Security (Docker & Podman)",
       icon: Container,
       description:
-        "Gestão de contêineres, uso de Docker Compose e implementação de serviços em ambientes isolados (ex: n8n e ferramentas de SOC em conteiner como o wazuh)",
+        "Foco: Orquestração e Isolamento Utilização diária de Docker e Podman para criação de laboratórios de segurança isolados. Domínio de docker-compose para subir stacks completas (ELK, Wazuh) e práticas de execução rootless com Podman para redução de superfície de ataque no ambiente Athena OS.",
+      color: "cyber-green",
+    },
+    {
+      name: "Linux & Hardening",
+      icon: Terminal,
+      description:
+        "Foco: Administração de Sistemas (Athena OS/Arch) Proficiência em ambientes baseados em Arch Linux e Debian. Domínio avançado de CLI (Bash/Zsh) para navegação, manipulação de arquivos e gerenciamento de permissões (chmod/chown). Conhecimento prático em gerenciamento de processos, análise de logs de sistema (journalctl, syslog) e configuração de firewall local. Validado por: TryHackMe Linux Fundamentals e uso diário como SO principal.",
+      color: "cyber-blue",
+    },
+    {
+      name: "Network Traffic Analysis",
+      icon: Network,
+      description:
+        "Foco: Forense de Rede e Protocolos Análise de pacotes e tráfego de rede utilizando Wireshark e Tcpdump. Compreensão sólida do modelo OSI e TCP/IP para identificar anomalias de tráfego. Habilidade em mapeamento de rede e descoberta de hosts/serviços ativos utilizando Nmap. Validado por: TryHackMe Networking & Wireshark Basics.",
+      color: "cyber-purple",
+    },
+    {
+      name: "Blue Team Operations & Threat Intel",
+      icon: Search,
+      description:
+        "Foco: Defesa e Identificação de Ameaças Compreensão teórica e prática da Pyramid of Pain e táticas de defesa. Estudo de vulnerabilidades recentes (ex: CVE-2024-21413) e aplicação de conceitos de Incident Response para triagem de alertas. Familiaridade com frameworks de defesa e ciclo de vida de ataques cibernéticos.",
+      color: "cyber-orange",
+    },
+    {
+      name: "Python for Security",
+      icon: Code,
+      description:
+        "Foco: Automação e Scripting Desenvolvimento de scripts para automação de tarefas repetitivas e parsing de logs. Utilização de bibliotecas para interação com sistemas e redes, com foco em criar ferramentas auxiliares para rotinas de segurança e testes de conectividade.",
       color: "cyber-green",
     },
   ];
@@ -130,15 +82,7 @@ const Skills = () => {
                     <h3 className="font-semibold">{skill.name}</h3>
                   </div>
 
-                  <div className="mb-3">
-                    <div className="flex justify-between text-sm mb-2">
-                      <span className="text-muted-foreground">
-                        Proficiência
-                      </span>
-                      <span className="text-primary">{skill.level}%</span>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </div>
+
 
                   <p className="text-sm text-muted-foreground">
                     {skill.description}
