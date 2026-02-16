@@ -7,6 +7,7 @@ import {
   Container,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 
 const Skills = () => {
@@ -58,11 +59,13 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <ScrollReveal width="100%" className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="gradient-text">Hard Skills</span>
+              <span className="gradient-text glitch" data-text="Hard Skills">
+                Hard Skills
+              </span>
             </h2>
             <p className="text-muted-foreground">
               Competências técnicas desenvolvidas através de estudos e prática
@@ -74,7 +77,7 @@ const Skills = () => {
             {skills.map((skill, index) => (
               <Card
                 key={skill.name}
-                className="hover:cyber-glow transition-all duration-300"
+                className="cyber-card"
               >
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-4">
@@ -91,7 +94,7 @@ const Skills = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

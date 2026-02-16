@@ -2,6 +2,7 @@ import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import CertificateCard from "./CertificateCard";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const Education = () => {
   const education = [
@@ -134,7 +135,7 @@ const Education = () => {
       hours: 3,
       date: "Fev 2026",
       description: "Especialização focada na identificação de fraudes digitais, análise de engenharia social e implementação de camadas de proteção contra golpes modernos.",
-      imageUrl: "/certificados/certified-online-fraud-prevention-specialist(COFPS).png", 
+      imageUrl: "/certificados/certified-online-fraud-prevention-specialist(COFPS).png",
       linkUrl: "blob:https://academy.hackandfix.com/9d8a4ba1-eba6-48c3-bf28-5e9b10b2cab8"
     }
   ];
@@ -142,11 +143,13 @@ const Education = () => {
   return (
     <section id="education" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <ScrollReveal width="100%" className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="gradient-text">Formação e Cursos</span>
+              <span className="gradient-text glitch" data-text="Formação e Cursos">
+                Formação e Cursos
+              </span>
             </h2>
             <p className="text-muted-foreground">
               Minha jornada educacional em cibersegurança e tecnologia
@@ -157,7 +160,7 @@ const Education = () => {
           <div className="mb-12">
             <h3 className="text-2xl font-semibold mb-6">Formação Acadêmica</h3>
             {education.map((edu, index) => (
-              <Card key={edu.title} className="cyber-glow">
+              <Card key={edu.title} className="cyber-card">
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="flex items-center space-x-3">
@@ -225,7 +228,7 @@ const Education = () => {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

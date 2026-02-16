@@ -10,6 +10,8 @@ import TryHackMeIcon from "@/components/icons/TryHackMeIcon";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 
 const Contact = () => {
   const { toast } = useToast();
@@ -91,11 +93,13 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <ScrollReveal width="100%" className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="gradient-text">Contato</span>
+              <span className="gradient-text glitch" data-text="Contato">
+                Contato
+              </span>
             </h2>
             <p className="text-muted-foreground">
               Vamos conversar sobre oportunidades em cibersegurança
@@ -109,7 +113,7 @@ const Contact = () => {
               return (
                 <Card
                   key={method.title}
-                  className="hover:cyber-glow transition-all duration-300"
+                  className="cyber-card"
                 >
                   <CardContent className="p-6 text-center">
                     <Icon
@@ -141,7 +145,7 @@ const Contact = () => {
           </div>
 
           {/* Main Contact Card */}
-          <Card className="cyber-glow mb-8">
+          <Card className="cyber-card mb-8">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -202,7 +206,7 @@ const Contact = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

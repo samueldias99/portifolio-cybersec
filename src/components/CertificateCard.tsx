@@ -25,7 +25,7 @@ const CertificateCard: React.FC<CertificateProps> = ({
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <Card className="cyber-glow hover:shadow-lg transition-all duration-300 group bg-card text-card-foreground border-border rounded-xl shadow-md p-6 md:p-8">
+      <Card className="cyber-card group p-6 md:p-8">
         <CardContent className="flex flex-col md:flex-row items-start gap-6">
           <div
             className="w-[300px] h-[200px] flex-shrink-0 bg-black/5 rounded-lg overflow-hidden cursor-pointer"

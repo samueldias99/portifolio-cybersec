@@ -9,6 +9,8 @@ import SiemIcon from "@/components/icons/SiemIcon";
 import IdsIpsIcon from "@/components/icons/IdsIpsIcon";
 import LogAnalysisIcon from "@/components/icons/LogAnalysisIcon";
 import IncidentResponseIcon from "@/components/icons/IncidentResponseIcon";
+import ParticlesBackground from "@/components/ui/ParticlesBackground";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -20,7 +22,7 @@ const Hero = () => {
       const timer = setTimeout(() => {
         setDisplayText(fullText.slice(0, currentIndex + 1));
         setCurrentIndex(currentIndex + 1);
-      }, 100);
+      }, 50); // Slightly faster typing speed
       return () => clearTimeout(timer);
     }
   }, [currentIndex, fullText]);
@@ -32,79 +34,129 @@ const Hero = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyber-blue/5 to-cyber-green/5" />
-      <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-cyber-blue/10 blur-xl floating-animation" />
-      <div
-        className="absolute bottom-1/4 right-1/4 w-24 h-24 rounded-full bg-cyber-green/10 blur-xl floating-animation"
-        style={{ animationDelay: "2s" }}
-      />
+      <ParticlesBackground />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyber-blue/5 to-cyber-green/5 pointer-events-none" />
 
-      <div className="container mx-auto px-4 text-center z-10">
+      {/* Content Container */}
+      <motion.div
+        className="container mx-auto px-4 text-center z-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <div className="max-w-4xl mx-auto">
           {/* Icons */}
-          <div className="flex justify-center space-x-8 mb-8">
-            <Shield className="w-12 h-12 text-cyber-blue floating-animation" />
-            <Terminal
-              className="w-12 h-12 text-cyber-green floating-animation"
-              style={{ animationDelay: "1s" }}
-            />
-            <Lock
-              className="w-12 h-12 text-cyber-purple floating-animation"
-              style={{ animationDelay: "2s" }}
-            />
-          </div>
+          <motion.div
+            className="flex justify-center space-x-8 mb-8"
+            variants={itemVariants}
+          >
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Shield className="w-12 h-12 text-cyber-blue shadow-lg shadow-cyber-blue/20 rounded-full p-2 bg-background/50 border border-cyber-blue/30" />
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              <Terminal className="w-12 h-12 text-cyber-green shadow-lg shadow-cyber-green/20 rounded-full p-2 bg-background/50 border border-cyber-green/30" />
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            >
+              <Lock className="w-12 h-12 text-cyber-purple shadow-lg shadow-cyber-purple/20 rounded-full p-2 bg-background/50 border border-cyber-purple/30" />
+            </motion.div>
+          </motion.div>
 
           {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            <span className="gradient-text">Samuel Dias</span>
-          </h1>
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold mb-4"
+            variants={itemVariants}
+          >
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyber-blue via-cyber-green to-cyber-blue bg-300% animate-gradient">
+              Samuel Dias
+            </span>
+          </motion.h1>
 
           {/* Typewriter Subtitle */}
-          <div className="text-xl md:text-2xl text-muted-foreground mb-8 font-mono">
+          <motion.div
+            className="text-xl md:text-2xl text-muted-foreground mb-8 font-mono h-8"
+            variants={itemVariants}
+          >
             <span>{displayText}</span>
-            <span className="animate-pulse">|</span>
-          </div>
+            <span className="animate-pulse text-cyber-green">_</span>
+          </motion.div>
 
           {/* Description */}
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-            Focado em segurança defensiva e operações de Blue Team. Em busca de 
-            oportunidades para atuar em SOC (Security Operations Center), monitoramento 
+          <motion.p
+            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
+            variants={itemVariants}
+          >
+            Focado em segurança defensiva e operações de Blue Team. Em busca de
+            oportunidades para atuar em SOC (Security Operations Center), monitoramento
             de segurança, resposta a incidentes e proteção proativa de infraestruturas.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            variants={itemVariants}
+          >
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="cyber-glow pulse-glow"
+              className="bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue/20 border-cyber-blue/50 hover:shadow-[0_0_20px_rgba(0,242,234,0.3)] transition-all duration-300"
             >
               Entre em Contato
             </Button>
 
-            {/* O código original foi alterado aqui para usar uma tag <a> para o link. */}
             <a
               href="https://www.linkedin.com/in/samuel-dias48"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-12 px-6"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background/50 backdrop-blur-sm shadow-sm hover:bg-accent hover:text-accent-foreground h-12 px-6 hover:border-cyber-green/50 hover:text-cyber-green"
             >
               Linkedin
             </a>
-          </div>
+          </motion.div>
 
           {/* Tech Stack */}
-          <div className="mt-12">
-            <p className="text-sm text-muted-foreground mb-4">
-              Tecnologias em foco:
+          <motion.div
+            className="mt-12"
+            variants={itemVariants}
+          >
+            <p className="text-sm text-muted-foreground mb-4 font-semibold tracking-wider uppercase">
+              Tecnologias em foco
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <div className="flex flex-wrap justify-center gap-4 text-sm max-w-3xl mx-auto">
               {[
                 { name: "Wazuh", icon: WazuhIcon },
                 { name: "Docker", icon: FaDocker },
@@ -119,19 +171,20 @@ const Hero = () => {
               ].map((tech) => {
                 const IconComponent = tech.icon;
                 return (
-                  <span
+                  <motion.span
                     key={tech.name}
-                    className="px-3 py-2 bg-card border border-border rounded-full text-muted-foreground hover:text-primary hover:border-primary transition-colors flex items-center gap-2"
+                    whileHover={{ scale: 1.05, borderColor: "var(--cyber-green)" }}
+                    className="px-3 py-2 bg-card/50 backdrop-blur-sm border border-white/10 rounded-full text-muted-foreground hover:text-white transition-colors flex items-center gap-2 cursor-default"
                   >
                     <IconComponent className="w-5 h-5" />
                     {tech.name}
-                  </span>
+                  </motion.span>
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import { MessageCircle, Lightbulb, Calendar, Heart, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const SoftSkills = () => {
   const skills = [
@@ -73,11 +74,13 @@ const SoftSkills = () => {
   return (
     <section id="soft-skills" className="py-20 bg-background/50">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <ScrollReveal width="100%" className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="gradient-text">Soft Skills</span>
+              <span className="gradient-text glitch" data-text="Soft Skills">
+                Soft Skills
+              </span>
             </h2>
             <p className="text-muted-foreground">
               Competências comportamentais essenciais para o sucesso
@@ -90,7 +93,7 @@ const SoftSkills = () => {
             {skills.map((skill, index) => (
               <Card
                 key={skill.title}
-                className="hover:cyber-glow transition-all duration-300"
+                className="cyber-card"
               >
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-4">
@@ -124,7 +127,7 @@ const SoftSkills = () => {
           </div>
 
           {/* Skills Matrix */}
-          <Card className="cyber-glow">
+          <Card className="cyber-card">
             <CardContent className="p-8">
               <h3 className="text-xl font-semibold mb-6 text-center">
                 Matriz de Competências Comportamentais
@@ -151,9 +154,8 @@ const SoftSkills = () => {
                           {[1, 2, 3, 4, 5].map((level) => (
                             <div
                               key={level}
-                              className={`w-3 h-3 rounded-full ${
-                                level <= 4 ? "bg-primary" : "bg-muted"
-                              }`}
+                              className={`w-3 h-3 rounded-full ${level <= 4 ? "bg-primary" : "bg-muted"
+                                }`}
                             />
                           ))}
                         </div>
@@ -180,9 +182,8 @@ const SoftSkills = () => {
                           {[1, 2, 3, 4, 5].map((level) => (
                             <div
                               key={level}
-                              className={`w-3 h-3 rounded-full ${
-                                level <= 5 ? "bg-accent" : "bg-muted"
-                              }`}
+                              className={`w-3 h-3 rounded-full ${level <= 5 ? "bg-accent" : "bg-muted"
+                                }`}
                             />
                           ))}
                         </div>
@@ -215,7 +216,7 @@ const SoftSkills = () => {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

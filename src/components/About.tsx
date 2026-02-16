@@ -1,15 +1,18 @@
 import { Target, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const About = () => {
   return (
     <section id="about" className="py-20 bg-background/50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <ScrollReveal width="100%" className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="gradient-text">Sobre Mim</span>
+              <span className="gradient-text glitch" data-text="Sobre Mim">
+                Sobre Mim
+              </span>
             </h2>
             <p className="text-muted-foreground">
               Conheça minha jornada na cibersegurança
@@ -17,7 +20,7 @@ const About = () => {
           </div>
 
           {/* Journey Story */}
-          <Card className="mb-8 cyber-glow">
+          <Card className="mb-8 cyber-card">
             <CardContent className="p-8">
               <div className="flex items-start space-x-4">
                 <Target className="w-8 h-8 text-cyber-blue mt-1 flex-shrink-0" />
@@ -50,7 +53,7 @@ const About = () => {
 
           {/* Values Grid */}
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="hover:cyber-glow transition-all duration-300">
+            <Card className="cyber-card">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
                   <Target className="w-6 h-6 text-cyber-green mt-1" />
@@ -69,7 +72,7 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:cyber-glow transition-all duration-300">
+            <Card className="cyber-card">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
                   <Zap className="w-6 h-6 text-cyber-blue mt-1" />
@@ -88,7 +91,7 @@ const About = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
