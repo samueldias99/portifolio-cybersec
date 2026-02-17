@@ -25,7 +25,7 @@ const Education = () => {
       platform: "Udemy",
       instructor: "Instrutor Especializado",
       duration: "20 horas",
-      status: "Concluído",
+      status: "2025",
       description:
         "Fundamentos de redes TCP/IP, protocolos de segurança, análise de tráfego e configuração de firewalls.",
       skills: [
@@ -46,7 +46,7 @@ const Education = () => {
       platform: "Udemy",
       instructor: "Especialista em Ethical Hacking",
       duration: "12 horas",
-      status: "Em Andamento",
+      status: "2025",
       description:
         "Desenvolvimento de ferramentas de segurança, automação de testes de penetração e análise de vulnerabilidades usando Python.",
       skills: [
@@ -65,10 +65,21 @@ const Education = () => {
 
   const certifications = [
     {
+      title: "Information Technology Fundamentals",
+      institution: "IBM",
+      hours: 10,
+      date: "2026",
+      description:
+        "Este titular da credencial demonstra conhecimento dos fundamentos de tecnologia da informação (TI), metodologias de solução de problemas e as ferramentas e recursos que os profissionais de TI utilizam. O indivíduo possui uma compreensão conceitual de noções básicas de computador, redes, hardware, software, segurança de computadores e tem experiência em suporte a clientes com uma ferramenta de conexão remota simulada.",
+      linkUrl:
+        "https://www.credly.com/badges/ee5a8466-87f3-4216-aae1-86aef17fd960/public_url",
+      imageUrl: "/certificados/ibm-it-fundamentals.png",
+    },
+    {
       title: "IBM Cybersecurity Fundamentals",
       institution: "IBM",
       hours: 8,
-      date: "Janeiro de 2026",
+      date: "2026",
       description:
         "Este certificado demonstra uma compreensão fundamental dos conceitos, objetivos e práticas de cibersegurança. Isso inclui grupos de ameaças cibernéticas, tipos de ataques, engenharia social, estudos de caso, estratégias gerais de segurança, criptografia e abordagens comuns que as organizações adotam para prevenir, detectar e responder a ataques cibernéticos. Também inclui uma visão do mercado de trabalho em cibersegurança.",
       imageUrl: "/certificados/cybersecurity-fundamentals-ibm.png",
@@ -95,7 +106,7 @@ const Education = () => {
         "Formação focada no domínio do ecossistema Git e GitHub, capacitando profissionais em controle de versão, colaboração e administração de projetos. Habilidades desenvolvidas incluem gerenciamento de repositórios, workflows colaborativos, code reviews e práticas DevOps modernas.",
       imageUrl: "/certificados/certificadogithub.png",
       linkUrl:
-        "https://assets.dio.me/AoogI8xWdR2Tx1uplWU6wDlxexbeGY0fsnAysgniPvU/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci80UkxSQzlIUC5qcGc",
+        "https://assets.dio.me/AoogI8xWdR2Tx1uplWU6wDlxexbeGY0fsnAysgniPvU/f:webp/h:320/q:70/w:450/L2NlcnRpZmljYXRlcy9jb3Zlci84U0dPWVNXQi5qcGc",
     },
     {
       title: "Certificação Linux",
@@ -112,7 +123,7 @@ const Education = () => {
       title: "Certified Phishing Prevention Specialist (CPPS)",
       institution: "Hack & Fix Academy",
       hours: 3,
-      date: "Dezembro de 2025",
+      date: "2025",
       description:
         "Certificação em prevenção de phishing, emitida pela Hack & Fix Academy. Especialização focada na identificação e mitigação de ataques de engenharia social, análise de vetores de phishing e implementação de boas práticas de defesa cibernética para proteção de dados e ativos digitais",
       imageUrl: "/certificados/cpps.png",
@@ -133,7 +144,7 @@ const Education = () => {
       title: "Certified Online Fraud Prevention Specialist (COFPS)",
       institution: "Hack & Fix Academy",
       hours: 3,
-      date: "Fev 2026",
+      date: "2026",
       description: "Especialização focada na identificação de fraudes digitais, análise de engenharia social e implementação de camadas de proteção contra golpes modernos.",
       imageUrl: "/certificados/certified-online-fraud-prevention-specialist(COFPS).png",
       linkUrl: "blob:https://academy.hackandfix.com/9d8a4ba1-eba6-48c3-bf28-5e9b10b2cab8"
@@ -214,7 +225,7 @@ const Education = () => {
           <div className="mb-12">
             <h3 className="text-2xl font-semibold mb-6">Certificações</h3>
             <div className="space-y-6">
-              {certifications.map((cert, index) => (
+              {certifications.map((cert: any, index) => (
                 <CertificateCard
                   key={cert.title}
                   title={cert.title}
@@ -224,6 +235,7 @@ const Education = () => {
                   description={cert.description}
                   imageUrl={cert.imageUrl}
                   linkUrl={cert.linkUrl}
+                  embedId={cert.embedId}
                 />
               ))}
             </div>

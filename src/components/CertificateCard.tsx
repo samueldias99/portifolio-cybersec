@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, X } from "lucide-react";
@@ -9,7 +9,8 @@ interface CertificateProps {
   hours: number;
   date: string;
   description: string;
-  imageUrl: string; // URL para a imagem/badge do certificado
+  imageUrl?: string; // URL para a imagem/badge do certificado (agora opcional)
+  embedId?: string; // ID do badge do Credly para embed
   linkUrl: string; // URL de validação ou link para a imagem grande
 }
 
@@ -20,27 +21,54 @@ const CertificateCard: React.FC<CertificateProps> = ({
   date,
   description,
   imageUrl,
+  embedId,
   linkUrl,
 }) => {
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (embedId) {
+      const scriptId = "credly-embed-script";
+      if (!document.getElementById(scriptId)) {
+        const script = document.createElement("script");
+        script.id = scriptId;
+        script.type = "text/javascript";
+        script.async = true;
+        script.src = "//cdn.credly.com/assets/utilities/embed.js";
+        document.body.appendChild(script);
+      }
+    }
+  }, [embedId]);
+
   return (
     <>
       <Card className="cyber-card group p-6 md:p-8">
         <CardContent className="flex flex-col md:flex-row items-start gap-6">
-          <div
-            className="w-[300px] h-[200px] flex-shrink-0 bg-black/5 rounded-lg overflow-hidden cursor-pointer"
-            onClick={(e) => {
-              e.stopPropagation();
-              setShowModal(true);
-            }}
-            role="button"
-            aria-label={`Ver certificado ${title}`}
-          >
-            <img
-              src={imageUrl}
-              alt={`Certificado ${title}`}
-              className="w-full h-full object-contain rounded-lg border border-border group-hover:border-cyan-500 transition-colors"
-            />
+          <div className="w-[300px] min-h-[200px] flex-shrink-0 flex items-center justify-center bg-black/5 rounded-lg overflow-hidden">
+            {embedId ? (
+              <div
+                data-iframe-width="150"
+                data-iframe-height="270"
+                data-share-badge-id={embedId}
+                data-share-badge-host="https://www.credly.com"
+              ></div>
+            ) : (
+              <div
+                className="w-full h-[200px] cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowModal(true);
+                }}
+                role="button"
+                aria-label={`Ver certificado ${title}`}
+              >
+                <img
+                  src={imageUrl}
+                  alt={`Certificado ${title}`}
+                  className="w-full h-full object-contain rounded-lg border border-border group-hover:border-cyan-500 transition-colors"
+                />
+              </div>
+            )}
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between mb-3">
@@ -78,8 +106,8 @@ const CertificateCard: React.FC<CertificateProps> = ({
         </CardContent>
       </Card>
 
-      {/* Modal */}
-      {showModal && (
+      {/* Modal - Apenas para imagens estáticas */}
+      {showModal && imageUrl && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
           onClick={() => setShowModal(false)}
